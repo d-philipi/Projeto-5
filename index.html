@@ -10,22 +10,36 @@
         <link rel="stylesheet" href="reset.css" />
         <link rel="stylesheet" media="(max-width: 900px)" href="estilo.css" />
         <link rel="stylesheet" href="estilo.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <main>
+        <main class="inativo">
             <img src="./midia/logo 2.png">
-            <input type="text" placeholder="Digite seu nome" onclick="identificar(this)"/>
-            <button onclick="Iniciar()">Entrar</button>
+            <input type="text" placeholder="Digite seu nome"/>
+            <button onclick="iniciar()">Entrar</button>
         </main>
         <header>
-
+            <img src="./midia/logo 1.png">
+            <ion-icon name="people"></ion-icon>
         </header>
-        <div>
-
-        </div>
         <ul>
-
+            <li>
+                <h1>(09:21:45)  <strong>João</strong>  entra na sala...</h1>
+            </li>
+            <li class="sistema">
+                <h1>(09:22:28)  <strong>João</strong> para <strong>Todos</strong>:  Bom dia</h1>
+            </li>
+            <li class="reservada">
+                <h1>(09:22:38)  <strong>Maria</strong> para <strong>João</strong>:  Oi João :)</h1>
+            </li>
         </ul>
+        <div class="escreva">
+            <input type="text" placeholder="Escreva aqui...">
+            <ion-icon name="paper-plane-outline"></ion-icon>
+        </div>
+        
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
         <script src="script.js"></script>

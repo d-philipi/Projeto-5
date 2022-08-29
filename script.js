@@ -1,6 +1,17 @@
 let usuario;
 
-function identificar(nome){
+function iniciar(){
+    const nome = document.querySelector('input');
+
+    if (nome.value.length > 0){
+
     usuario = nome.value;
-    console.log(usuario);
+
+    }else{
+
+        alert("Digite um nome vállido");
+        
+    }
+
+
 }

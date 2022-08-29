@@ -8,6 +8,7 @@
 
 body{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -49,4 +50,93 @@ main button{
     left: 133px;
     background: #E7E7E7;
     border-radius: 9px;
+}
+
+header{
+    width: 375px;
+    height: 80px;
+    padding: 0 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+header img{
+    width: 75px;
+    height: 53px;
+}
+
+header ion-icon{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    color: #000000;
+}
+
+ul{
+    width: 375px;
+    height: 507px;
+    padding: 12px 0;
+    background: #F3F3F3;
+}
+
+li{
+    width: 375px;
+    height: 40px;
+    margin: 4px 0;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    background: #FFFFFF;
+    border-radius: 2px;
+}
+
+h1{
+    font-family:'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #AAAAAA;
+}
+
+strong{
+    color: #000000;
+    font-weight: bold;
+}
+
+.sistema{
+    background: #DCDCDC;
+}
+
+.reservada{
+    background: #FFDEDE;
+}
+
+.escreva {
+    width: 375px;
+    height: 80px;
+    padding: 0 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.escreva input{
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000000;
+}
+
+.escreva ion-icon{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    color: #000000;
 }
