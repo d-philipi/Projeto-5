@@ -96,7 +96,7 @@ function abrirFecharMenu(){
 function carregarMensagem(seilaoque){
     let item = `
     <li class = "${tipo}">
-        <h1>(${hora})  <strong>${usuario}</strong>  ${text}</h1>
+        <h1>(${hora})  <strong>${usuario}</strong>  ${texto}</h1>
     </li>`;
 
     chat.innerHTML = chat.innerHTML + item;
@@ -107,12 +107,11 @@ function enviar(){
     destinatario = "Todos";
     tipo = "message";
 
-    const dados ={
+    const dados = {
         from: usuario,
         to: destinatario,
         text: texto,
         type: tipo,
-        time: hora
     };
 
     const requisicao = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', dados);
