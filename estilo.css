@@ -140,3 +140,80 @@ strong{
     cursor: pointer;
     color: #000000;
 }
+
+.conteiner{
+    width: 375px;
+    height: 667px;
+    position: relative;
+}
+
+nav{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    z-index: 2;
+}
+
+section{
+    width: 259px;
+    height: 100%;
+    background-color: #FFFFFF;
+}
+
+section ul {
+    width: 100%;
+    height: 150px;
+    padding: 8px;
+    background-color: #FFFFFF;
+}
+
+section li{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+section ion-icon{
+    width: 20px;
+    height: 20px;
+    color: #000000;
+}
+
+section h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+}
+
+.contatos {
+    height: 50px;
+    padding: 30px;
+    text-align: center;
+}
+
+.contatos h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #000000;
+}
+
+.visibilidade {
+    height: 30px;
+    text-align: center;
+}
+
+.visibilidade h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #000000;
+}

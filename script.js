@@ -10,8 +10,11 @@ function iniciar(){
     }else{
 
         alert("Digite um nome vállido");
-        
+
     }
+}
+
+function abrirMenu(){
 
 
 }

@@ -20,26 +20,62 @@
             <input type="text" placeholder="Digite seu nome"/>
             <button onclick="iniciar()">Entrar</button>
         </main>
-        <header>
-            <img src="./midia/logo 1.png">
-            <ion-icon name="people"></ion-icon>
-        </header>
-        <ul>
-            <li>
-                <h1>(09:21:45)  <strong>João</strong>  entra na sala...</h1>
-            </li>
-            <li class="sistema">
-                <h1>(09:22:28)  <strong>João</strong> para <strong>Todos</strong>:  Bom dia</h1>
-            </li>
-            <li class="reservada">
-                <h1>(09:22:38)  <strong>Maria</strong> para <strong>João</strong>:  Oi João :)</h1>
-            </li>
-        </ul>
-        <div class="escreva">
-            <input type="text" placeholder="Escreva aqui...">
-            <ion-icon name="paper-plane-outline"></ion-icon>
+        <div class="conteiner">
+            <ul>
+                <li>
+                    <h1>(09:21:45)  <strong>João</strong>  entra na sala...</h1>
+                </li>
+                <li class="sistema">
+                    <h1>(09:22:28)  <strong>João</strong> para <strong>Todos</strong>:  Bom dia</h1>
+                </li>
+                <li class="reservada">
+                    <h1>(09:22:38)  <strong>Maria</strong> para <strong>João</strong>:  Oi João :)</h1>
+                </li>
+            </ul>
+            <header>
+                <img src="./midia/logo 1.png">
+                <ion-icon name="people" onclick="abrirMenu()"></ion-icon>
+            </header>
+            <nav>
+                <section>
+                    <div class="contatos">
+                        <h1>Escolha um contato para enviar mensagem:</h1>
+                    </div>
+                    <ul>
+                        <li>
+                            <ion-icon name="people"></ion-icon>
+                            <h1>Todos</h1>
+                        </li>
+                        <li>
+                            <ion-icon name="person"></ion-icon>
+                            <h1>João</h1>
+                        </li>
+                        <li>
+                            <ion-icon name="person"></ion-icon>
+                            <h1>Maria</h1>
+                        </li>
+                    </ul>
+                    <div class="visibilidade">
+                        <h1>Escolha a visibilidade:</h1>
+                    </div>
+                    <ul>
+                        <li>
+                            <ion-icon name="lock-open"></ion-icon>
+                            <h1>Público</h1>
+                        </li>
+                        <li>
+                            <ion-icon name="lock-closed"></ion-icon>
+                            <h1>Reservadamente</h1>
+                        </li>
+                    </ul>
+                </section>
+            </nav>
+            <div class="escreva">
+                <input type="text" placeholder="Escreva aqui...">
+                <ion-icon name="paper-plane-outline"></ion-icon>
+            </div>
         </div>
-        
+
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
         <script src="script.js"></script>
