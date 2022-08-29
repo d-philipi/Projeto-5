@@ -4,6 +4,9 @@ let destinatario;
 let tipo;
 let entrada;
 let saida;
+let mensagens
+let id1;
+let id2;
 
 const hora = new Date().toLocaleTimeString();
 const chat = document.querySelector('ul');
@@ -11,7 +14,7 @@ const chat = document.querySelector('ul');
 function processarCarregamento(resposta) {
     console.log('Deu certo');
     console.log(resposta.data);
-    const mensagens = resposta.data;
+    mensagens = resposta.data;
 
     for (let i = 0; i < 4; i++){
         let item = `
@@ -57,7 +60,8 @@ function carregarchat(){
     </li>`;
 
     chat.innerHTML = chat.innerHTML + entrada;
-    const id = setInterval(conectado, 5000);
+    id1 = setInterval(conectado, 5000);
+    id2 = setInterval(recarregarchat, 3000);
     
     const promessa = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
     promessa.then(processarCarregamento);
@@ -99,6 +103,9 @@ function carregarMensagem(seilaoque){
         <h1>(${hora})  <strong>${usuario}</strong>  ${texto}</h1>
     </li>`;
 
+    const novasmensagens = document.querySelector('.conteiner ul li');
+    novasmensagens.scrollIntoView();
+
     chat.innerHTML = chat.innerHTML + item;
 }
 
@@ -118,4 +125,16 @@ function enviar(){
 
     requisicao.then(carregarMensagem);
     requisicao.catch(processarErro);
+}
+
+function recarregarchat(){
+    
+    for (let i = 0; i < 4; i++){
+        let item = `
+    <li class = "${mensagens[i].type}">
+        <h1>(${mensagens[i].time})  <strong>${mensagens[i].from}</strong>  ${mensagens[i].text}</h1>
+    </li>`;
+
+    chat.innerHTML = chat.innerHTML + item;
+    }
 }
