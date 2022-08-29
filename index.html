@@ -15,28 +15,28 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <main class="inativo">
+        <main class="">
             <img src="./midia/logo 2.png">
             <input type="text" placeholder="Digite seu nome"/>
-            <button onclick="iniciar()">Entrar</button>
+            <button onclick="entrar()">Entrar</button>
         </main>
-        <div class="conteiner">
+        <div class="conteiner inativo">
+            <header>
+                <img src="./midia/logo 1.png">
+                <ion-icon name="people" onclick="abrirFecharMenu()"></ion-icon>
+            </header>
             <ul>
-                <li>
+                <li class="status">
                     <h1>(09:21:45)  <strong>João</strong>  entra na sala...</h1>
                 </li>
-                <li class="sistema">
+                <li class="">
                     <h1>(09:22:28)  <strong>João</strong> para <strong>Todos</strong>:  Bom dia</h1>
                 </li>
-                <li class="reservada">
+                <li class="private_message">
                     <h1>(09:22:38)  <strong>Maria</strong> para <strong>João</strong>:  Oi João :)</h1>
                 </li>
             </ul>
-            <header>
-                <img src="./midia/logo 1.png">
-                <ion-icon name="people" onclick="abrirMenu()"></ion-icon>
-            </header>
-            <nav>
+            <nav class="inativo" onclick="abrirFecharMenu()">
                 <section>
                     <div class="contatos">
                         <h1>Escolha um contato para enviar mensagem:</h1>
@@ -72,7 +72,7 @@
             </nav>
             <div class="escreva">
                 <input type="text" placeholder="Escreva aqui...">
-                <ion-icon name="paper-plane-outline"></ion-icon>
+                <ion-icon name="paper-plane-outline" onclick="enviar()"></ion-icon>
             </div>
         </div>
 

@@ -1,11 +1,85 @@
 let usuario;
+let texto;
+let destinatario;
+let tipo;
+let entrada;
+let saida;
 
-function iniciar(){
-    const nome = document.querySelector('input');
+const hora = new Date().toLocaleTimeString();
+const chat = document.querySelector('ul');
 
-    if (nome.value.length > 0){
+function processarCarregamento(resposta) {
+    console.log('Deu certo');
+    console.log(resposta.data);
+    const mensagens = resposta.data;
 
-    usuario = nome.value;
+    for (let i = 0; i < 4; i++){
+        let item = `
+    <li class = "${mensagens[i].type}">
+        <h1>(${mensagens[i].time})  <strong>${mensagens[i].from}</strong>  ${mensagens[i].text}</h1>
+    </li>`;
+
+    chat.innerHTML = chat.innerHTML + item;
+    }
+}
+
+function processarErro(erro){
+    console.log('Deu errado');
+    console.log(erro.response);
+}
+
+function online(resposta){
+    console.log(resposta.data);
+}
+
+function saiu(erro){
+    console.log(erro.response);
+}
+
+function conectado(){
+    const dado = {name: usuario}
+    const requisicao = axios.post('https://mock-api.driven.com.br/api/v6/uol/participants', dado);
+
+    requisicao.then(online);
+    requisicao.catch(saiu);
+}
+
+function carregarchat(){
+
+    const corpo = document.querySelector('.conteiner');
+    const telainicial = document.querySelector('main');
+    telainicial.classList.add('inativo');
+    corpo.classList.remove('inativo');
+
+    entrada = `
+    <li class = "sistema">
+        <h1>(${hora})  <strong>${usuario}</strong>  entra na sala...</h1>
+    </li>`;
+
+    chat.innerHTML = chat.innerHTML + entrada;
+    const id = setInterval(conectado, 5000);
+    
+    const promessa = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
+    promessa.then(processarCarregamento);
+    promessa.catch(processarErro)
+}
+
+function digitenovonome(erro){
+    alert('Já existe um usuário com esse nome, digite outro nome que possamos identificar você.');
+    document.location.reload(true);
+}
+
+function entrar(){
+    const nome = document.querySelector('input').value;
+
+    if (nome.length !== 0){
+
+    usuario = nome;
+    const dado = {name: usuario};
+    const requisicao = axios.post('https://mock-api.driven.com.br/api/v6/uol/participants', dado);
+
+    requisicao.then(carregarchat);
+    requisicao.catch(digitenovonome);
 
     }else{
 
@@ -14,7 +88,35 @@ function iniciar(){
     }
 }
 
-function abrirMenu(){
+function abrirFecharMenu(){
+    const menu = document.querySelector('nav');
+    menu.classList.toggle('inativo');
+}
 
+function carregarMensagem(seilaoque){
+    let item = `
+    <li class = "${tipo}">
+        <h1>(${hora})  <strong>${usuario}</strong>  ${text}</h1>
+    </li>`;
 
+    chat.innerHTML = chat.innerHTML + item;
+}
+
+function enviar(){
+    texto = document.querySelector('.escreva input').value;
+    destinatario = "Todos";
+    tipo = "message";
+
+    const dados ={
+        from: usuario,
+        to: destinatario,
+        text: texto,
+        type: tipo,
+        time: hora
+    };
+
+    const requisicao = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', dados);
+
+    requisicao.then(carregarMensagem);
+    requisicao.catch(processarErro);
 }
